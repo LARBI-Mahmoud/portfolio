@@ -1,0 +1,26 @@
+<div class="projects-section">
+  <div class="section-header">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="section-underline"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects">
+      <div class="project-header">
+        <div class="project-title-group">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <span class="project-stack">{{ project.stack }}</span>
+        </div>
+        <div class="project-links">
+          <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+          <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="project-link" title="Source Code"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="project-body">
+        <p class="project-description">{{ project.description }}</p>
+        <ul class="project-features">
+          <li *ngFor="let feature of project.features"><i class="fas fa-check-circle"></i> {{ feature }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
